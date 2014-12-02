@@ -1,0 +1,37 @@
+package mypgms;
+
+public class FurnitureComposTest //to order furniture
+{
+	String typeFur;
+    String purpose;
+    String material;
+    
+    
+    public  FurnitureComposTest(String typeFur,String purFur,String material)
+    {
+    	this.typeFur = typeFur;
+    	this.purpose = purFur;
+    	this.material = material;
+    	
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	int stock;
+	int quantity; 
+    FurnitureComposTest fct = new FurnitureComposTest("Chair","Reclining","Faux leather"); 
+    quantity = 3;
+    FurnitureStock fstock = new FurnitureStock(quantity);
+    
+    stock = fstock.GetStock();
+    if (stock > 0 && stock>=quantity)
+    {
+    	System.out.println("Stock Available for "+fct.purpose+" "+fct.typeFur+" with "+fct.material);
+   
+	}
+    else
+    	System.out.println("Stock not Available");
+    System.out.println("Total Available stock for "+fct.purpose+" "+fct.typeFur+" is");
+    fstock.StockAvailable();
+    	
+	}	
+}
